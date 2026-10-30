@@ -1,0 +1,30 @@
+{
+  "name": "@hiredesk/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "vitest run test/unit",
+    "test:integration": "vitest run test/integration",
+    "db:migrate": "tsx src/db/migrate.ts up",
+    "db:rollback": "tsx src/db/migrate.ts down",
+    "db:seed": "tsx ../../scripts/seed.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.5",
+    "@hiredesk/shared": "workspace:*",
+    "fastify": "^5.12.7",
+    "ioredis": "^6.0.0",
+    "kysely": "^0.29.7",
+    "node-pg-migrate": "^9.0.0",
+    "pg": "^8.23.1",
+    "winston": "^3.19.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1"
+  }
+}

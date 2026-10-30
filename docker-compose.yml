@@ -1,0 +1,15 @@
+# Local development services. Synthetic data only.
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: hiredesk
+      POSTGRES_PASSWORD: hiredesk
+      POSTGRES_DB: hiredesk_dev
+    ports: ['5432:5432']
+    volumes: ['pgdata:/var/lib/postgresql']
+  redis:
+    image: redis:7
+    ports: ['6379:6379']
+volumes:
+  pgdata:
